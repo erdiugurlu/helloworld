@@ -1,0 +1,8 @@
+- name: deployment of kubernetes application
+  hosts: minikube
+  become: true
+  user: root
+  tasks:
+  - name: run helm command
+    command: helm ls
+  
