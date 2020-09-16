@@ -15,13 +15,5 @@
        - name: upgrade the deployment
          command: helm upgrade helloworld ./helloworld 
          args:
-           chdir: /home/jenkinsusr/package  
-  - name: remove details of the deployment
-    file:
-      state: absent
-      path: /home/jenkinsusr/package/
-  - name: Create the package directory
-    file:
-      path: /home/jenkinsusr/package
-      state: directory
+           chdir: /home/jenkinsusr/package
   
