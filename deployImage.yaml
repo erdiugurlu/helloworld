@@ -5,8 +5,17 @@
   tasks:
   - name: run helm command
     command: helm ls
-  - name: install kubernetes deployment
-    command: helm install helloworld ./helloworld 
-    args:
-      chdir: /home/jenkinsusr/package
+  - name: install/update kubernetes deployment
+    block:
+       - name: install helm
+         command: helm install helloworld ./helloworld 
+         args:
+           chdir: /home/jenkinsusr/package
+    rescue:
+       - name: update the deployment
+         command: helm update helloworld ./helloworld 
+         args:
+           chdir: /home/jenkinsusr/package  
+  - name: remove details of the deployment
+    command: rm -rf /home/jenkinsusr/package/*
   
