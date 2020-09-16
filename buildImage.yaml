@@ -1,4 +1,4 @@
-- hosts: ansible-server
+- hosts: ansibleserver
   become: true
   tasks:
   - name: build docker image using docker file
