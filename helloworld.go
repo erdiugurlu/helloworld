@@ -10,7 +10,7 @@ import (
 
 //home page
 func homeLink(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello World from @ErdiUgurlu!!!")
+	fmt.Fprintf(w, "Hello HP from @ErdiUgurlu!!!")
 }
 
 //HealthCheckHandler is for readiness and liveness probes
