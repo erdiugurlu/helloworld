@@ -8,5 +8,5 @@
   - name: install kubernetes deployment
     command: helm install helloworld ./helloworld 
     args:
-      chdir: /home/jenkins/package
+      chdir: /home/jenkinsusr/package
   
