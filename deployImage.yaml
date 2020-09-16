@@ -20,4 +20,8 @@
     file:
       state: absent
       path: /home/jenkinsusr/package/
+  - name: Create the package directory
+    file:
+      path: /home/jenkinsusr/package
+      state: directory
   
