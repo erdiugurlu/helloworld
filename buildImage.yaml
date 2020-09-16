@@ -1,14 +1,16 @@
 - hosts: ansibleserver
   become: true
+  vars:
+    imageversion: 1.0.1
   tasks:
   - name: build docker image using docker file
-    command: docker build -t helloworld:1.0.1 .
+    command: docker build -t helloworld:"{{ imageversion }}" .
     args:
        chdir: /home/ansadmin/package
   - name: docker tag image
-    command: docker tag helloworld:1.0.1 erdiugurlu/helloworld:1.0.1
+    command: docker tag helloworld:"{{ imageversion }}"erdiugurlu/helloworld:"{{ imageversion }}"
   - name: docker push image
-    command: docker push erdiugurlu/helloworld:1.0.1
+    command: docker push erdiugurlu/helloworld:"{{ imageversion }}"
   - name: remove docker images on the host
-    command: docker rmi helloworld:1.0.1 erdiugurlu/helloworld:1.0.1
+    command: docker rmi helloworld:"{{ imageversion }}" erdiugurlu/helloworld:"{{ imageversion }}"
     ignore_errors: yes
