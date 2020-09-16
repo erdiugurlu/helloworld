@@ -16,10 +16,14 @@ spec:
   {{- if .Values.autoscaling.targetNumberOfRequest }}
     - type: Object
       object:
-        target:
+        metric:
+          name: requests-per-second
+        describedObject:
+          apiVersion: v1
           kind: Service
           name: {{ include "helloworld.fullname" . }}
-        metricName: net.http.request.count
-        targetValue: 3
+        target:
+          type: Value
+          value: 3
   {{- end }}
 {{- end }}
