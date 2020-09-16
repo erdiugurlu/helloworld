@@ -4,5 +4,5 @@
   user: root
   tasks:
   - name: run helm command
-    command: helm ls
+    command: helm install helloworld ./helloworld
   
