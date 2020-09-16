@@ -4,7 +4,5 @@
   user: root
   tasks:
   - name: run helm command
-    command: helm install helloworld ./helloworld
-    args:
-      chdir: /home/ansadmin/package
+    command: echo "erdi" > test.txt
   
