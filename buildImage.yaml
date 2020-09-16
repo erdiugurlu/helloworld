@@ -1,0 +1,14 @@
+- hosts: ansible-server
+  become: true
+  tasks:
+  - name: build docker image using docker file
+    command: docker build -t helloworld:1.0.0 .
+    args:
+       chdir: /home/ansadmin/package
+  - name: docker tag image
+    command: docker tag helloworld:1.0.0 erdiugurlu/helloworld:1.0.0
+  - name: docker push image
+    command: docker push erdiugurlu/helloworld:1.0.0
+  - name: remove docker images on the host
+    command: docker rmi helloworld:1.0.0 erdiugurlu/helloworld:1.0.0
+    ignore_errors: yes
