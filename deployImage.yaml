@@ -12,8 +12,8 @@
          args:
            chdir: /home/jenkinsusr/package
     rescue:
-       - name: update the deployment
-         command: helm update helloworld ./helloworld 
+       - name: upgrade the deployment
+         command: helm upgrade helloworld ./helloworld 
          args:
            chdir: /home/jenkinsusr/package  
   - name: remove details of the deployment
