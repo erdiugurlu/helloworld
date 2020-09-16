@@ -1,7 +1,7 @@
 - hosts: ansibleserver
   become: true
   vars:
-    imageversion: 1.0.1
+    imageversion: 1.0.2
   tasks:
   - name: build docker image using docker file
     command: docker build -t helloworld:"{{ imageversion }}" .
