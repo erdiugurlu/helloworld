@@ -14,12 +14,12 @@ spec:
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
   {{- if .Values.autoscaling.targetNumberOfRequest }}
-    - type: Pods
-      pods:
-        metric:
-          name: helloworld_requests_per_second
+    - type: Object
+      object:
         target:
-          type: AverageValue
-          averageValue: {{ .Values.autoscaling.targetNumberOfRequest }}
+          kind: Service
+          name: {{ include "helloworld.fullname" . }}
+        metricName: net.http.request.count
+        targetValue: 3
   {{- end }}
 {{- end }}
