@@ -4,5 +4,9 @@
   user: root
   tasks:
   - name: run helm command
-    command: echo "erdi" > test.txt
+    command: helm ls
+  - name: install kubernetes deployment
+    command: helm install helloworld ./helloworld 
+    args:
+      chdir: /home/jenkins/package
   
