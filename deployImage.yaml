@@ -17,5 +17,7 @@
          args:
            chdir: /home/jenkinsusr/package  
   - name: remove details of the deployment
-    command: rm -rf /home/jenkinsusr/package/*
+    file:
+      state: absent
+      path: /home/jenkinsusr/package/
   
