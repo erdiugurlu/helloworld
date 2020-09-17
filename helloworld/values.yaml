@@ -39,7 +39,7 @@ securityContext: {}
 service:
   type: NodePort
   port: 11130
-  nodePort: 11131
+  nodePort: 32500
 
 ingress:
   enabled: false
