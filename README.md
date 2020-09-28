@@ -1,12 +1,14 @@
 # Simple Golang Application and DevOps Project
 
-This repository contains dockerize application in Go, Ansible YAML files and Helm charts. You can build and update your application and deploy it on a Minikube server. When you push your codes on your computer to your repository, Jenkins server is pulling your code and forwarding them into Ansible server for building image and Minikube Server for deploying the service on Minikube.
+This repository contains a dockerize application in Go language. Additionally, Ansible YAML files and Helm charts prepared for building and deploying the service on a Minikube cluster. If you have the following configurations and this repository, after you update your code or configuration, you can deploy your service on a Minikube server automatically.
 
 You can update image version by editing values.yaml, Chart.yaml and buildImage.yaml
 
+When you push your codes on your computer to your repository, Jenkins server is pulling your code and forwarding them into Ansible server for building image and Minikube Server for deploying the service on Minikube by using Helm.
+
 ### Before you begin
 
-You have 3 servers(two EC2 instances and one Ubuntu instance)to install Jenkins, Ansible and Minikube to run this pipeline and the application. 
+You have 3 servers(two EC2 instances and one Ubuntu instance) which are running on Jenkins, Ansible and Minikube to run this IaC. 
 
 ### Minikube Configuration
 
